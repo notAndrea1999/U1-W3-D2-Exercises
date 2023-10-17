@@ -38,5 +38,10 @@ public class EventoDAO {
 
     }
 
+    public void refresh(Evento evento) {
+        em.refresh(evento);
+        System.out.println("L'evento e' stato refreshato");
+    }
+
 
 }

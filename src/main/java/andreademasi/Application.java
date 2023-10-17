@@ -47,6 +47,16 @@ public class Application {
             // Find and delete by Id
             eventoDAO.findByIdAndDelete(2);
 
+            // Refresh
+            Evento test2 = eventoDAO.findById(10);
+            if (test2 != null) {
+                test2.setTitolo("Prova di refresh");
+                System.out.println("Statto di test2 prima del refresh: " + test2);
+
+                eventoDAO.refresh(test2);
+                System.out.println("Statto di test2 dopo il refresh: " + test2);
+            }
+
         } catch (Exception ex) {
             System.err.println(ex);
         } finally {
